@@ -18,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class,"gender"])->name("index");
 Route::get('/login', [UserController::class,"login"])->name("client.login");
+Route::get('/logout', [UserController::class,"login"])->name("client.logout");
 Route::get("/movie/{slug?}", [CategoryController::class, "index", "slug"])->where(["slug"])->name("movie");
 Route::get("/play/{slug?}/{episode?}", [CategoryController::class, "play", "slug","episode"])->where(["slug","episode"])->name("play");

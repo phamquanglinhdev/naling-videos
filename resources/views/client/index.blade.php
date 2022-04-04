@@ -1,5 +1,18 @@
 @extends("layouts.client")
 @section("slider")
+    <style>
+        .slick-bg.bg-1 {
+            background-image: url(https://wallpapercave.com/wp/dMzhWUU.jpg);
+        }
+
+        .slick-bg.bg-2 {
+            background-image: url(https://th.bing.com/th/id/R.bc228e4a26b306916a0bbd22b18485c1?rik=MmQPV7CA5uqlXQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fAWLQo7T.jpg&ehk=3nWW7Mz%2fniZol19%2fBoBILwvmAjEQI%2bNxQBRtBwZs9R0%3d&risl=&pid=ImgRaw&r=0);
+        }
+
+        .slick-bg.bg-3 {
+            background-image: url(https://wallpapercave.com/wp/pDgmtuY.jpg);
+        }
+    </style>
     <div class="main-slider" id="main-slider">
         <div class="slider big-slider slider-wrap">
             <div class="slide slick-bg bg-1">
@@ -8,20 +21,16 @@
                         <div class="row align-items-center h-100">
                             <div class="col-xl-6 col-lg-12 col-md-12">
                                 <h3 data-animation-in="fadeInUp" data-delay-in="1"><span
-                                        class="badge bg-warning text-dark">New</span></h3>
-                                <h1 data-animation-in="fadeInUp" data-delay-in="1">Iron door</h1>
+                                        class="badge bg-danger text-dark">HOT</span></h3>
+                                <h1 data-animation-in="fadeInUp" data-delay-in="1">Học PHP siêu tốc</h1>
                                 <div class="slide-info" data-animation-in="fadeInUp" data-delay-in="1">
                                     <span>2021</span> <span class="radius">+18</span> <span>2h 6m</span>
                                 </div>
-                                <p data-animation-in="fadeInUp" data-delay-in="1">Lorem Ipsum is simply dummy text of
-                                    the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                    dummy text ever since the 1500s.</p>
+                                <p data-animation-in="fadeInUp" data-delay-in="1">Bởi vì em quá xinh đẹp </p>
                                 <div class="slider-buttons d-flex align-items-center" data-animation-in="fadeInUp"
                                      data-delay-in="1">
-                                    <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i
-                                            aria-hidden="true" class="fa fa-play mr-2"></i>Play Now</a> <a
-                                        class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i
-                                            class="fas fa-plus mr-2"></i>My List</a>
+                                                                        <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i
+                                                                                aria-hidden="true" class="fa fa-check mr-2"></i>Đăng ký ngay</a>
                                 </div>
                             </div>
                             <!-- Col End -->
@@ -40,7 +49,7 @@
                             <div class="col-xl-6 col-lg-12 col-md-12">
                                 <h3 data-animation-in="fadeInUp" data-delay-in="1"><span
                                         class="badge bg-warning text-dark">New</span></h3>
-                                <h1 data-animation-in="fadeInUp" data-delay-in="1">The Earth</h1>
+                                <h1 data-animation-in="fadeInUp" data-delay-in="1">Tư vấn lập trình</h1>
                                 <div class="slide-info" data-animation-in="fadeInUp" data-delay-in="1">
                                     <span>2021</span> <span class="radius">+18</span> <span>2h 6m</span>
                                 </div>
@@ -50,9 +59,11 @@
                                 <div class="slider-buttons d-flex align-items-center" data-animation-in="fadeInUp"
                                      data-delay-in="1">
                                     <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i
-                                            aria-hidden="true" class="fa fa-play mr-2"></i>Play Now</a> <a
-                                        class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i
-                                            class="fas fa-plus mr-2"></i>My List</a>
+                                            aria-hidden="true" class="fa fa-check mr-2"></i>In box ngay</a>
+                                    {{--                                    <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i--}}
+                                    {{--                                            aria-hidden="true" class="fa fa-play mr-2"></i>Play Now</a> <a--}}
+                                    {{--                                        class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i--}}
+                                    {{--                                            class="fas fa-plus mr-2"></i>My List</a>--}}
                                 </div>
                             </div>
                             <!-- Col End -->
@@ -71,7 +82,7 @@
                             <div class="col-xl-6 col-lg-12 col-md-12">
                                 <h3 data-animation-in="fadeInUp" data-delay-in="1"><span
                                         class="badge bg-warning text-dark">New</span></h3>
-                                <h1 data-animation-in="fadeInUp" data-delay-in="1">City dreams</h1>
+                                <h1 data-animation-in="fadeInUp" data-delay-in="1">Lập trình đa dạng</h1>
                                 <div class="slide-info" data-animation-in="fadeInUp" data-delay-in="1">
                                     <span>2021</span> <span class="radius">+18</span> <span>2h 6m</span>
                                 </div>
@@ -80,10 +91,10 @@
                                     dummy text ever since the 1500s.</p>
                                 <div class="slider-buttons d-flex align-items-center" data-animation-in="fadeInUp"
                                      data-delay-in="1">
-                                    <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i
-                                            aria-hidden="true" class="fa fa-play mr-2"></i>Play Now</a> <a
-                                        class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i
-                                            class="fas fa-plus mr-2"></i>My List</a>
+                                    {{--                                    <a class="btn hvr-sweep-to-right" href="watch-movie.html" tabindex="0"><i--}}
+                                    {{--                                            aria-hidden="true" class="fa fa-play mr-2"></i>Play Now</a> <a--}}
+                                    {{--                                        class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i--}}
+                                    {{--                                            class="fas fa-plus mr-2"></i>My List</a>--}}
                                 </div>
                             </div>
                             <!-- Col End -->
@@ -771,13 +782,15 @@
                                             <div class="box-content">
                                                 <ul class="icon">
                                                     <li>
-                                                        <a href="{{route("movie",$movie->slug)}}"><i class="fas fa-info"></i></a>
+                                                        <a href="{{route("movie",$movie->slug)}}"><i
+                                                                class="fas fa-info"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="#"><i class="fas fa-plus"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{route("play",['slug'=>$movie->slug])}}"><i class="fas fa-play"></i></a>
+                                                        <a href="{{route("play",['slug'=>$movie->slug])}}"><i
+                                                                class="fas fa-play"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -785,7 +798,8 @@
                                         </div>
                                         <!-- Video Thumb End -->
                                         <div class="video-content">
-                                            <h2 class="video-title"><a href="{{route("movie",$movie->slug)}}">{{$movie->name}}</a></h2>
+                                            <h2 class="video-title"><a
+                                                    href="{{route("movie",$movie->slug)}}">{{$movie->name}}</a></h2>
                                             <div class="video-info d-flex align-items-center">
                                                 <span class="video-year">{{$movie->starter}}</span>
                                                 <span class="video-type">{{$movie->coach}}</span>

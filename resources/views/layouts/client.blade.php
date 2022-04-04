@@ -236,16 +236,11 @@
                                         </div>
                                         <ul class="dropdown-menu dropdown-menu-right fade-up">
                                             <li>
-                                                <a class="dropdown-item" href="account-settings.html">Account
-                                                    Settings</a>
-                                            </li>
-                                            <!-- Li 1 end -->
-                                            <li>
-                                                <a class="dropdown-item" href="pricing-plan.html">pricing plans</a>
+                                                <a class="dropdown-item" href="account-settings.html">Thông tin tài khoản</a>
                                             </li>
                                             <!-- Li 2 end -->
                                             <li>
-                                                <a class="dropdown-item" href="{{route("backpack.auth.logout")}}">Logout</a>
+                                                <a class="dropdown-item" href="{{route("backpack.auth.logout")}}">Đăng xuất</a>
                                             </li>
                                             <!-- Li 3 end -->
                                         </ul>
