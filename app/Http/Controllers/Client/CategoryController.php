@@ -23,7 +23,7 @@ class CategoryController extends Controller
         }
     }
 
-    public function play($slug = null, $episode = 2)
+    public function play($slug = null, $episode = 1)
     {
         if ($slug == null) {
             return view("errors.404");

@@ -60,7 +60,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mobile-logo text-center">
-                            <a href="index.html"><img alt="" class="img-fluid" src="{{asset("images/header-logo.png")}}"></a>
+                            <a href="{{route("index")}}"><img alt="" class="img-fluid"
+                                                      src="{{asset("images/header-logo.png")}}"></a>
                         </div>
                     </div>
                     <!-- Logo Col End -->
@@ -80,7 +81,7 @@
                     <!-- Start Navigation -->
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="{{route("index")}}"><img alt="" class="img-fluid"
-                                                                       src="{{asset("images/header-logo.png")}}"></a>
+                                                                               src="{{asset("images/header-logo.png")}}"></a>
                         <!-- Logo End -->
                         <div class="site-nav-inner float-left">
                             <button aria-controls="navbarSupportedContent" aria-expanded="true"
@@ -105,34 +106,34 @@
                                         <a class="nav-link" href="shows.html">Contact Us</a>
                                     </li>
                                     <!-- Nav Item 3 End -->
-{{--                                    <li class="nav-item dropdown">--}}
-{{--                                        <a class="nav-link menu-dropdown" data-toggle="dropdown" href="#">Pages <i--}}
-{{--                                                class="fa fa-angle-down"></i></a>--}}
-{{--                                        <ul class="dropdown-menu fade-up" role="menu">--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item" href="about.html">About Us</a>--}}
-{{--                                            </li>--}}
-{{--                                            <!-- Sub Nav Item 1 End -->--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item" href="contacts.html"></a>--}}
-{{--                                            </li>--}}
-{{--                                            <!-- Sub Nav Item 2 End -->--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item" href="404.html">404</a>--}}
-{{--                                            </li>--}}
-{{--                                            <!-- Sub Nav Item 3 End -->--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item" href="login.html">Login</a>--}}
-{{--                                            </li>--}}
-{{--                                            <!-- Sub Nav Item 4 End -->--}}
-{{--                                            <li>--}}
-{{--                                                <a class="dropdown-item" href="sign-up.html">Signup</a>--}}
-{{--                                            </li>--}}
-{{--                                            <!-- Sub Nav Item 5 End -->--}}
-{{--                                        </ul>--}}
-{{--                                        <!-- Dropdown End -->--}}
-{{--                                    </li>--}}
-                                    <!-- Nav Item 4 End -->
+                                {{--                                    <li class="nav-item dropdown">--}}
+                                {{--                                        <a class="nav-link menu-dropdown" data-toggle="dropdown" href="#">Pages <i--}}
+                                {{--                                                class="fa fa-angle-down"></i></a>--}}
+                                {{--                                        <ul class="dropdown-menu fade-up" role="menu">--}}
+                                {{--                                            <li>--}}
+                                {{--                                                <a class="dropdown-item" href="about.html">About Us</a>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!-- Sub Nav Item 1 End -->--}}
+                                {{--                                            <li>--}}
+                                {{--                                                <a class="dropdown-item" href="contacts.html"></a>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!-- Sub Nav Item 2 End -->--}}
+                                {{--                                            <li>--}}
+                                {{--                                                <a class="dropdown-item" href="404.html">404</a>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!-- Sub Nav Item 3 End -->--}}
+                                {{--                                            <li>--}}
+                                {{--                                                <a class="dropdown-item" href="login.html">Login</a>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!-- Sub Nav Item 4 End -->--}}
+                                {{--                                            <li>--}}
+                                {{--                                                <a class="dropdown-item" href="sign-up.html">Signup</a>--}}
+                                {{--                                            </li>--}}
+                                {{--                                            <!-- Sub Nav Item 5 End -->--}}
+                                {{--                                        </ul>--}}
+                                {{--                                        <!-- Dropdown End -->--}}
+                                {{--                                    </li>--}}
+                                <!-- Nav Item 4 End -->
                                 </ul>
                                 <!-- Nav UL End -->
                             </div>
@@ -224,34 +225,66 @@
                             <!-- Sidebar Filter Button End -->
                         </li>
                         <!-- Nav Item 2 End -->
-                        <li class="nav-item">
-                            <div class="nav-account ml-2">
-                                <div class="dropdown">
-                                    <div aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
-                                         id="dropdown-account" role="button"><img alt=""
-                                                                                  class="img-fluid user-icon rounded-circle"
-                                                                                  src="{{asset("images/avatar/user.jpg")}}"></div>
-                                    <ul class="dropdown-menu dropdown-menu-right fade-up">
-                                        <li>
-                                            <a class="dropdown-item" href="account-settings.html">Account Settings</a>
-                                        </li>
-                                        <!-- Li 1 end -->
-                                        <li>
-                                            <a class="dropdown-item" href="pricing-plan.html">pricing plans</a>
-                                        </li>
-                                        <!-- Li 2 end -->
-                                        <li>
-                                            <a class="dropdown-item" href="#">Logout</a>
-                                        </li>
-                                        <!-- Li 3 end -->
-                                    </ul>
-                                    <!-- Account List End -->
+                        @if(backpack_auth()->check())
+                            <li class="nav-item">
+                                <div class="nav-account ml-2">
+                                    <div class="dropdown">
+                                        <div aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+                                             id="dropdown-account" role="button"><img alt=""
+                                                                                      class="img-fluid user-icon rounded-circle"
+                                                                                      src="{{asset("images/avatar/user.jpg")}}">
+                                        </div>
+                                        <ul class="dropdown-menu dropdown-menu-right fade-up">
+                                            <li>
+                                                <a class="dropdown-item" href="account-settings.html">Account
+                                                    Settings</a>
+                                            </li>
+                                            <!-- Li 1 end -->
+                                            <li>
+                                                <a class="dropdown-item" href="pricing-plan.html">pricing plans</a>
+                                            </li>
+                                            <!-- Li 2 end -->
+                                            <li>
+                                                <a class="dropdown-item" href="{{route("backpack.auth.logout")}}">Logout</a>
+                                            </li>
+                                            <!-- Li 3 end -->
+                                        </ul>
+                                        <!-- Account List End -->
+                                    </div>
+                                    <!-- Account Drop Down End -->
                                 </div>
-                                <!-- Account Drop Down End -->
-                            </div>
-                            <!-- Account Menu End -->
-                        </li>
-                        <!-- Nav Item 3 End -->
+                                <!-- Account Menu End -->
+                            </li>
+                    @else
+                            <li class="nav-item">
+                                <div class="nav-account ml-2">
+                                    <div class="dropdown">
+                                        <div aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
+                                             id="dropdown-account" role="button"><img alt=""
+                                                                                      class="img-fluid user-icon rounded-circle"
+                                                                                      src="{{asset("images/avatar/user.jpg")}}"></div>
+                                        <ul class="dropdown-menu dropdown-menu-right fade-up">
+                                            <li>
+                                                <a class="dropdown-item" href="account-settings.html">Account Settings</a>
+                                            </li>
+                                            <!-- Li 1 end -->
+                                            <li>
+                                                <a class="dropdown-item" href="pricing-plan.html">Đăng ký</a>
+                                            </li>
+                                            <!-- Li 2 end -->
+                                            <li>
+                                                <a class="dropdown-item" href="{{route("client.login")}}">Đăng nhập</a>
+                                            </li>
+                                            <!-- Li 3 end -->
+                                        </ul>
+                                        <!-- Account List End -->
+                                    </div>
+                                    <!-- Account Drop Down End -->
+                                </div>
+                                <!-- Account Menu End -->
+                            </li>
+                    @endif
+                    <!-- Nav Item 3 End -->
                     </ul>
                     <!-- Nav UL End -->
                 </div>
@@ -274,7 +307,8 @@
                 <div class="col-md-3">
                     <div class="footer-widget">
                         <div class="widget-content">
-                            <div class="footer-logo"><img alt="" class="img-fluid" src="{{asset("images/footer-logo.png")}}"></div>
+                            <div class="footer-logo"><img alt="" class="img-fluid"
+                                                          src="{{asset("images/footer-logo.png")}}"></div>
                             <div class="footer-about-text">
                                 <p class="text-muted">Here , write the complete address of the Registered office address
                                     along with telephone number.</p>
