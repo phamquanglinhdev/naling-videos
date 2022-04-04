@@ -17,6 +17,9 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("slug");
+            $table->string("starter");
+            $table->string("coach");
+            $table->longText("description");
             $table->longText("thumbnail");
             $table->timestamps();
         });

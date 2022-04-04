@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('client.index');
+})->name("index");
+Route::get("/movie/{slug?}", [\App\Http\Controllers\Client\CategoryController::class, "index", "slug"])->where(["slug"])->name("movie");
+Route::get("/play/{slug?}/{episode?}", [\App\Http\Controllers\Client\CategoryController::class, "play", "slug","episode"])->where(["slug","episode"])->name("play");

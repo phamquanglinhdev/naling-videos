@@ -39,10 +39,12 @@ class CategoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('name');
-        CRUD::column('slug');
+
+        CRUD::column('name')->label("Tên thư mục");
+        CRUD::column('slug')->label("URL");
         CRUD::column('thumbnail')->type("image");
+        CRUD::column('coach')->label("Giảng viên");
+        CRUD::column('starter')->label("Ngày bắt đầu");
 
 
         /**
@@ -61,10 +63,14 @@ class CategoryCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(CategoryRequest::class);
-        CRUD::field('name')->type("video-src");
-        CRUD::field('slug');
-        CRUD::addField(['name' => 'thumbnail', 'type' => '64image','ratio'=>0.7]);
-        CRUD::addField(['name' => 'thumbnails', 'type' => 'editor']);
+        CRUD::field('name')->label("Tên thư mục");
+        CRUD::field('slug')->type("hidden");
+        CRUD::field('thumbnail')->type("64image")->label("Ảnh bìa")->ratio(0.65);
+        CRUD::field('coach')->label("Giảng viên");
+        CRUD::field('starter')->label("Ngày bắt đầu");
+        CRUD::field('description')->label("Tiêu đề");
+
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
