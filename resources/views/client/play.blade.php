@@ -2,7 +2,7 @@
 @section("content")
     <!-- Start Video Player -->
     <div class="video-container">
-        <video class="video d-block" controls="" loop="">
+        <video id="player" class="video d-block" controls="" loop="">
             <source src="{{$video->source}}" type="video/mp4">
         </video>
     </div>

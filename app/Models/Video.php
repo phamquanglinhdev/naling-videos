@@ -29,11 +29,20 @@ class Video extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function setEpisodeAttribute()
-    {
-        $episode = Video::where("category_id",'=',$this->category_id)->count();
-        $this->attributes['episode'] = $episode+1;
-    }
+    /**
+     * @var mixed
+     */
+    private $episode;
+
+//    public function setEpisodeAttribute()
+//    {
+//        if($episode = Video::where("category_id",'=',$this->category_id)->orderBy("episode","DESC")->first()){
+//            $episode = $episode->episode;
+//        }
+//        if($this->episode==""){
+//            $this->attributes['episode']= $episode+1;
+//        }
+//    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
