@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\VideoRequest;
+use App\Http\Requests\UserRequest;
+use App\Models\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class VideoCrudController
+ * Class UserCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class VideoCrudController extends CrudController
+class UserCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +27,9 @@ class VideoCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Video::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/video');
-        CRUD::setEntityNameStrings('video', 'videos');
+        CRUD::setModel(\App\Models\User::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
+        CRUD::setEntityNameStrings('Người dùng', 'Người dùng');
     }
 
     /**
@@ -39,18 +40,9 @@ class VideoCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name')->label("Tiêu đề");
-        CRUD::addColumn(['name' => 'thumbnail', 'type' => 'image','label'=>'Ảnh bìa']);
-        CRUD::addColumn([
-            'name' => 'category_id',
-            'label'=> 'Danh mục',
-            'model'=>'App\Models\Category',
-            'type' => 'select',
-            'entity'=>'Category',
-            'attribute'=>'name',
-        ]);
-        CRUD::column('episode')->type("hidden");
-        CRUD::column('updated_at')->label("Ngày cập nhật");
+        CRUD::column('name')->label("Tên");
+        CRUD::column('email')->label("Email");
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -67,20 +59,11 @@ class VideoCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(VideoRequest::class);
-        CRUD::field('name')->label("Tiêu đề");
-        CRUD::addField(['name' => 'thumbnail', 'type' => '64image','ratio'=>16/9]);
-        CRUD::addField(['name' => 'source', 'type' => 'text']);
-        CRUD::addField([
-            'name' => 'category_id',
-            'label'=> 'Danh mục',
-            'model'=>'App\Models\Category',
-            'type' => 'select',
-            'entity'=>'Category',
-            'attribute'=>'name',
-        ]);
-        CRUD::field('episode')->type("number")->label("Bài số ");
+        CRUD::setValidation(UserRequest::class);
 
+        CRUD::field('name')->label("Họ và tên");
+        CRUD::field('email');
+        CRUD::field('password')->type("hash-make")->label("Mật khẩu");
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
