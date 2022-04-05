@@ -46,6 +46,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public function Categories(){
+        return $this->belongsToMany(Category::class,"user_category","user_id","category_id");
+    }
 
 }

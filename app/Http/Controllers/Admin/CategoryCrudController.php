@@ -65,7 +65,7 @@ class CategoryCrudController extends CrudController
         CRUD::setValidation(CategoryRequest::class);
         CRUD::field('name')->label("Tên thư mục");
         CRUD::field('slug')->type("hidden");
-        CRUD::field('thumbnail')->type("64image")->label("Ảnh bìa")->ratio(0.65);
+        CRUD::field('thumbnail')->type("image")->label("Ảnh bìa")->crop(true)->aspect_ratio(0.65);
         CRUD::field('coach')->label("Giảng viên");
         CRUD::field('starter')->label("Ngày bắt đầu");
         CRUD::field('description')->label("Tiêu đề");
@@ -75,7 +75,7 @@ class CategoryCrudController extends CrudController
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
+         * - );
          */
     }
 

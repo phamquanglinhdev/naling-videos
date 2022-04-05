@@ -68,8 +68,9 @@ class VideoCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(VideoRequest::class);
+
         CRUD::field('name')->label("Tiêu đề");
-        CRUD::addField(['name' => 'thumbnail', 'type' => '64image','ratio'=>16/9]);
+        CRUD::addField(['name' => 'thumbnail', 'type' => 'image','crop'=>'true','aspect_ratio'=>16/9]);
         CRUD::addField(['name' => 'source', 'type' => 'text']);
         CRUD::addField([
             'name' => 'category_id',
