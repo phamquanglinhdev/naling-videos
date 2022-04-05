@@ -70,7 +70,8 @@ class VideoCrudController extends CrudController
         CRUD::setValidation(VideoRequest::class);
 
         CRUD::field('name')->label("Tiêu đề");
-        CRUD::addField(['name' => 'thumbnail', 'type' => 'image','crop'=>'true','aspect_ratio'=>16/9]);
+//        CRUD::addField(['name' => 'thumbnail', 'type' => 'image','crop'=>'true','aspect_ratio'=>16/9]);
+        CRUD::addField(['name' => 'thumbnail', 'type' => 'browse']);
         CRUD::addField(['name' => 'source', 'type' => 'text']);
         CRUD::addField([
             'name' => 'category_id',
