@@ -190,7 +190,7 @@
                         <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2">
                             <div class="episode-block">
                                 <div class="episode-img position-relative">
-                                    <img src="{{$single->thumbnail}}" class="img-fluid img-zoom" alt="">
+                                    <img src="{{asset($single->thumbnail)}}" class="img-fluid img-zoom" alt="">
                                     <div class="episode-number">{{$single->episode}}</div>
                                     <div class="episode-play-info">
                                         <div class="episode-play">

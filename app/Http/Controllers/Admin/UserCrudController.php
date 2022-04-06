@@ -64,7 +64,19 @@ class UserCrudController extends CrudController
         CRUD::field('name')->label("Họ và tên");
         CRUD::field('email');
         CRUD::field('password')->type("hash-make")->label("Mật khẩu");
+        CRUD::addField([
+            'label'     => "Khóa",
+            'type'      => 'select2_multiple',
+            'name'      => 'Categories', // the method that defines the relationship in your Model
 
+            // optional
+            'entity'    => 'categories', // the method that defines the relationship in your Model
+            'model'     => "App\Models\Category", // foreign key model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            // 'select_all' => true, // show Select All and Clear buttons?
+
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
