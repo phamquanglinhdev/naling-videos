@@ -4,7 +4,7 @@
 <head>
     <!-- Basic Page -->
     <meta charset="UTF-8">
-    <title>Ava Stream - Movies & Tv Shows Bootstrap 4 Template</title>
+    <title>{{$title??"Naling Video"}}</title>
     <!-- Mobile Specific -->
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -96,14 +96,14 @@
                                     </li>
                                     <!-- Nav Item 1 End -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="movies.html">Movies</a>
+                                        <a class="nav-link" href="{{route("index")}}#popular">Phố biến</a>
                                     </li>
                                     <!-- Nav Item 2 End -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="shows.html">About Us</a>
+                                        <a class="nav-link" href="{{route("index")}}#office-box">Top Khoá học</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="shows.html">Contact Us</a>
+                                        <a class="nav-link" href="https://www.facebook.com/dldevteamvn">Liên hệ</a>
                                     </li>
                                     <!-- Nav Item 3 End -->
                                 {{--                                    <li class="nav-item dropdown">--}}

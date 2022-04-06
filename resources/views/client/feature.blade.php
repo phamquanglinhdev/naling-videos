@@ -1,11 +1,11 @@
 @php
-$title = "Record ".$category->name;
+    $title = "Khoá học ".$category->name;
 @endphp
 @extends("layouts.client")
 @section("slider")
     <style>
         .custom-bg {
-            background-image: url("{{$category->thumbnail}}");
+            background-image: url("{{$feature->thumbnail}}");
         }
     </style>
     <div class="banner-single banner-wrap banner-bg custom-bg">
@@ -14,17 +14,17 @@ $title = "Record ".$category->name;
                 <div class="transparent-block">
                     <div class="banner-caption">
                         <div class="position-relative mb-4">
-                            <a href="{{route('play',['slug'=>$category->slug,'episode'=>1])}}" class="d-flex align-items-center">
-                                <div class="play-icon">
-                                    <div class="circle pulse"></div>
-                                    <div class="circle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                                            <polygon points="40,30 65,50 40,70"></polygon>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <h2 class="banner-name text-white font-weight-700">Play {{$category->name}}</h2>
-                            </a>
+                            {{--                            <a href="{{route('play',['slug'=>$feature->slug,'episode'=>1])}}" class="d-flex align-items-center">--}}
+                            {{--                                <div class="play-icon">--}}
+                            {{--                                    <div class="circle pulse"></div>--}}
+                            {{--                                    <div class="circle">--}}
+                            {{--                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">--}}
+                            {{--                                            <polygon points="40,30 65,50 40,70"></polygon>--}}
+                            {{--                                        </svg>--}}
+                            {{--                                    </div>--}}
+                            {{--                                </div>--}}
+                            {{--                                <h2 class="banner-name text-white font-weight-700">Play {{$feature->name}}</h2>--}}
+                            {{--                            </a>--}}
                         </div>
                     </div>
                     <!-- Banner Caption End -->
@@ -47,7 +47,7 @@ $title = "Record ".$category->name;
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="play-thumb mb-4">
-                                    <img class="img-fluid" src="{{$category->thumbnail}}" alt="">
+                                    <img class="img-fluid" src="{{$feature->thumbnail}}" alt="">
                                     <div class="top-badge">
                                         <div class="video-badge">
                                             <img class="img-fluid" src="{{asset("images/top-movies.png")}}" alt="">
@@ -71,25 +71,26 @@ $title = "Record ".$category->name;
                     <div class="col-md-9">
                         <div class="play-details-content">
                             <div class="title-block d-flex align-items-center justify-content-between">
-                                <h2 class="play-title">{{$category->name}}</h2>
+                                <h2 class="play-title">{{$feature->name}}</h2>
                             </div>
                             <!-- Title Block -->
                             <div class="details-info mb-4">
                                 {{--                                <span><i class="icofont-user mr-2" aria-hidden="true"></i> 18+</span>--}}
-                                <span><i class="icofont-clock-time mr-2" aria-hidden="true"></i> {{$category->starter}}</span>
+                                <span><i class="icofont-clock-time mr-2"
+                                         aria-hidden="true"></i> {{$feature->starter}}</span>
                                 {{--                                <span><i class="icofont-simple-smile mr-2" aria-hidden="true"></i> 2021</span>--}}
                                 {{--                                <span><i class="icofont-movie mr-2" aria-hidden="true"></i> Action</span>--}}
                                 {{--                                <span><i class="icofont-world mr-2" aria-hidden="true"></i> United States</span>--}}
                             </div>
                             <!-- Details Info -->
                             <div class="details-desc">
-                                <p>{{$category->description}}</p>
+                                <p>{{$feature->description}}</p>
                             </div>
                             <!-- Details Desc -->
                             <div class="movie-persons mb-4">
                                 <div class="person-block">
                                     <h5 class="title">Giảng Viên</h5>
-                                    <p class="name">{{$category->coach}}</p>
+                                    <p class="name">{{$feature->coach}}</p>
                                 </div>
                                 <!-- Person Block -->
                             {{--                                <div class="person-block">--}}
@@ -101,15 +102,18 @@ $title = "Record ".$category->name;
                             <!-- Movie Persons -->
                             <div class="details-buttons">
                                 <div class="row d-flex align-items-center">
+{{--                                    <div class="col-6 col-xl mb-xl-0 mb-3">--}}
+{{--                                        <a href="{{route('play',['slug'=>$feature->slug,'episode'=>1])}}"--}}
+{{--                                           class="btn d-block hvr-sweep-to-right"--}}
+{{--                                           tabindex="0"><i class="icofont-ui-play mr-2" aria-hidden="true"></i>Xem</a>--}}
+{{--                                    </div>--}}
+                                    <!-- Col End -->
                                     <div class="col-6 col-xl mb-xl-0 mb-3">
-                                        <a href="{{route('play',['slug'=>$category->slug,'episode'=>1])}}" class="btn d-block hvr-sweep-to-right"
-                                           tabindex="0"><i class="icofont-ui-play mr-2" aria-hidden="true"></i>Xem</a>
+                                        <a href="https://fb.me/linhcuenini"
+                                           class="btn d-block hvr-sweep-to-right" tabindex="0"><i
+                                                class="icofont-check mr-2" aria-hidden="true"></i>Yêu cầu tư vấn</a>
                                     </div>
                                     <!-- Col End -->
-                                {{--                                    <div class="col-6 col-xl mb-xl-0 mb-3">--}}
-                                {{--                                        <a href="{{asset('play',['slug'=>$category->slug,'episode'=>1])}}" class="btn d-block hvr-sweep-to-right" tabindex="0"><i class="icofont-plus mr-2" aria-hidden="true"></i>MY List</a>--}}
-                                {{--                                    </div>--}}
-                                <!-- Col End -->
                                     <div class="col-6 col-xl mb-xl-0 mb-3">
                                         <a id="trailer" class="btn d-block hvr-sweep-to-right" tabindex="0"
                                            data-toggle="modal" data-target="#trailer-modal" aria-hidden="true"><i
@@ -222,7 +226,8 @@ $title = "Record ".$category->name;
                                     <a href="#"><img class="img-fluid" src="{{$single->thumbnail}}" alt=""></a>
                                     <div class="box-content">
                                         <ul class="icon">
-                                            <li><a href="{{route('play',['slug'=>$category->slug,'episode'=>1])}}"><i class="fas fa-play"></i></a></li>
+                                            <li><a href="{{route('play',['slug'=>$feature->slug,'episode'=>1])}}"><i
+                                                        class="fas fa-play"></i></a></li>
                                             <li><a href="#"><i class="fas fa-plus"></i></a></li>
                                             <li><a href="{{route("movie",$single->slug)}}"><i
                                                         class="fas fa-info"></i></a></li>
@@ -232,7 +237,9 @@ $title = "Record ".$category->name;
                                 </div>
                                 <!-- Video Thumb End -->
                                 <div class="video-content">
-                                    <h2 class="video-title"><a href="{{route('play',['slug'=>$category->slug,'episode'=>1])}}">{{$single->name}}</a></h2>
+                                    <h2 class="video-title"><a
+                                            href="{{route('play',['slug'=>$feature->slug,'episode'=>1])}}">{{$single->name}}</a>
+                                    </h2>
                                     <div class="video-info d-flex align-items-center">
                                         <span class="video-year">{{$single->coach}}</span>
                                     </div>
