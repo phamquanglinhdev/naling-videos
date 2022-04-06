@@ -45,7 +45,7 @@
                                             <div class="slider-buttons d-flex align-items-center"
                                                  data-animation-in="fadeInUp"
                                                  data-delay-in="1">
-                                                <a class="btn hvr-sweep-to-right" href="watch-movie.html"
+                                                <a class="btn hvr-sweep-to-right" href="{{route("feature",$feature->slug)}}"
                                                    tabindex="0"><i
                                                         aria-hidden="true" class="fa fa-check mr-2"></i>Đăng ký ngay</a>
                                             </div>
@@ -723,7 +723,7 @@
     {{--        </section>--}}
     <!-- Main Tabs Section End -->
         <!-- Start Pupular Section -->
-        <section class="pupular">
+        <section class="pupular" id="popular">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -777,7 +777,7 @@
         </section>
         <!-- Pupular Section End -->
         <!-- Start Office Box Section -->
-        <section class="office-box">
+        <section class="office-box" id="office-box">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -807,11 +807,11 @@
                                                 </span>
                                             <div class="slider-buttons d-flex align-items-center"
                                                  data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">
-                                                <a class="btn hvr-sweep-to-right" href="watch-movie.html"
+                                                <a class="btn hvr-sweep-to-right" href="{{route("feature",$popular->slug)}}"
                                                    tabindex="0"><i
                                                         aria-hidden="true" class="fa fa-check mr-2"></i>Đăng ký ngay</a>
                                                 <a
-                                                    class="btn hvr-sweep-to-right ml-3" href="#" tabindex="0"><i
+                                                    class="btn hvr-sweep-to-right ml-3" href="https://fb.me/linhcuenini" tabindex="0"><i
                                                         class="fas fa-box mr-2"></i>Liên hệ tư vấn</a>
                                             </div>
                                         </div>
