@@ -1,5 +1,5 @@
 @php
-    $title = "Khoá học ".$category->name;
+    $title = "Khoá học ".$feature->name;
 @endphp
 @extends("layouts.client")
 @section("slider")
