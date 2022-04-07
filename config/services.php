@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'facebook' => [
+        'client_id' => '1121257292001930', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'b425ca4e2ae02a0f97d745dd86611300', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'https://naling-videos.com.vn/facebook/callback/'
+    ],
 ];
