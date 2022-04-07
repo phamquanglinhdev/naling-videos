@@ -32,6 +32,6 @@ return [
     'facebook' => [
         'client_id' => '1121257292001930', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'client_secret' => 'b425ca4e2ae02a0f97d745dd86611300', //USE FROM FACEBOOK DEVELOPER ACCOUNT
-        'redirect' => 'https://naling-videos.com.vn/facebook/callback/'
+        'redirect' => route('index').'/facebook/callback/'
     ],
 ];
