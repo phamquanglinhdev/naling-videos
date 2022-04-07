@@ -27,7 +27,7 @@ class FaceBookController extends Controller
                 'facebook_id' => $user->getId(),
             ],[
                 'name' => $user->getName(),
-                'email' => $user->getEmail(),
+                'email' => $user->getEmail() ?? $user->getId()."@facebook.com",
                 'password' => Hash::make($user->getName().'@'.$user->getId()),
                 'role'=>'1',
             ]);
