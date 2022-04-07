@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class,"gender"])->name("index");
 Route::get('/login', [UserController::class,"login"])->name("client.login");
+Route::get('/term', function (){
+    return view("client.term");
+})->name("term");
+Route::get('/privacy', function (){
+    return view("client.privacy");
+})->name("privacy");
 Route::get('/logout', [UserController::class,"login"])->name("client.logout");
 Route::get("/movie/{slug?}", [CategoryController::class, "index", "slug"])->where(["slug"])->name("movie");
 Route::get("/feature/{slug?}", [FeatureController::class, "index", "slug"])->where(["slug"])->name("feature");
