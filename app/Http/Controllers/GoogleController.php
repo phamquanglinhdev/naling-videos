@@ -37,7 +37,9 @@ class GoogleController extends Controller
                 ], [
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
-                    'password' => Hash::make($user->getName() . '@' . $user->getId())
+                    'password' => Hash::make($user->getName() . '@' . $user->getId()),
+                    'avatar'=> $user->getAvatar(),
+                    'role'=>1
                 ]);
             } else {
                 $saveUser = User::where('email', $user->getEmail())->update([

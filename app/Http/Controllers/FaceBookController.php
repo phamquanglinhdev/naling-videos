@@ -30,6 +30,7 @@ class FaceBookController extends Controller
                 'email' => $user->getEmail() ?? $user->getId()."@facebook.com",
                 'password' => Hash::make($user->getName().'@'.$user->getId()),
                 'role'=>'1',
+                'avatar'=>$user->getAvatar(),
             ]);
 
             Auth::loginUsingId($saveUser->id);
