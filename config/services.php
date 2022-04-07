@@ -34,4 +34,9 @@ return [
         'client_secret' => 'b425ca4e2ae02a0f97d745dd86611300', //USE FROM FACEBOOK DEVELOPER ACCOUNT
         'redirect' => env('APP_CALLBACK')
     ],
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT')
+    ],
 ];

@@ -45,8 +45,8 @@
                             </div>
                             <!-- Col End -->
                             <div class="col-md-6">
-                                <a href="watch-movie.html" class="btn twitter-color d-block hvr-sweep-to-right mb-3"
-                                   tabindex="0"><i class="icofont-twitter mr-2" aria-hidden="true"></i>Twitter</a>
+                                <a href="{{route("google.login")}}" class="btn google-color d-block hvr-sweep-to-right mb-3"
+                                   tabindex="0"><i class="icofont-google mr-2" aria-hidden="true"></i>Google</a>
                             </div>
                             <!-- Col End -->
                         </div>
