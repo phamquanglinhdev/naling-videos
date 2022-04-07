@@ -30,7 +30,7 @@ Route::get('/logout', [UserController::class,"login"])->name("client.logout");
 Route::get("/movie/{slug?}", [CategoryController::class, "index", "slug"])->where(["slug"])->name("movie");
 Route::get("/feature/{slug?}", [FeatureController::class, "index", "slug"])->where(["slug"])->name("feature");
 Route::get("/play/{slug?}/{episode?}", [CategoryController::class, "play", "slug","episode"])->where(["slug","episode"])->name("play");
-Route::prefix('public/facebook')->name('facebook.')->group( function(){
+Route::prefix('facebook')->name('facebook.')->group( function(){
     Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
     Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
 });
