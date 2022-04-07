@@ -35,12 +35,12 @@
                                     Login
                                 </button>
                             </div>
-                            <a href="reset-password.html">Lost your Password?</a>
+{{--                            <a href="reset-password.html">Lost your Password?</a>--}}
                         </form>
                         <!-- Form End -->
-                        <div class="row d-flex align-items-center mb-4">
+                        <div class="row d-flex align-items-center mb-4  ">
                             <div class="col-md-6">
-                                <a href="watch-movie.html" class="btn facebook-color d-block hvr-sweep-to-right mb-3"
+                                <a href="{{ route('facebook.login') }}" class="btn facebook-color d-block hvr-sweep-to-right mb-3"
                                    tabindex="0"><i class="icofont-facebook mr-2" aria-hidden="true"></i>Facebook</a>
                             </div>
                             <!-- Col End -->
@@ -51,7 +51,7 @@
                             <!-- Col End -->
                         </div>
                         <!-- Row End -->
-                        <p class="text-center">Don't have an account? <a href="sign-up.html">Sign up here!</a></p>
+{{--                        <p class="text-center">Don't have an account? <a href="sign-up.html">Sign up here!</a></p>--}}
                     </div>
                     <!-- Col End -->
                     <div class="col-lg-6">

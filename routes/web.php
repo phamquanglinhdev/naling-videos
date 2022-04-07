@@ -4,6 +4,7 @@ use App\Http\Controllers\Client\CategoryController;
 use App\Http\Controllers\Client\FeatureController;
 use App\Http\Controllers\Client\IndexController;
 use App\Http\Controllers\Client\UserController;
+use App\Http\Controllers\FaceBookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,7 @@ Route::get('/logout', [UserController::class,"login"])->name("client.logout");
 Route::get("/movie/{slug?}", [CategoryController::class, "index", "slug"])->where(["slug"])->name("movie");
 Route::get("/feature/{slug?}", [FeatureController::class, "index", "slug"])->where(["slug"])->name("feature");
 Route::get("/play/{slug?}/{episode?}", [CategoryController::class, "play", "slug","episode"])->where(["slug","episode"])->name("play");
+Route::prefix('facebook')->name('facebook.')->group( function(){
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
