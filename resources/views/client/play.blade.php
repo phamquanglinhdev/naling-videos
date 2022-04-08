@@ -15,7 +15,7 @@
                 var video = document.getElementById('video');
                 if (Hls.isSupported()) {
                     var hls = new Hls();
-                    hls.loadSource('https://cdn.jwplayer.com/manifests/juN85hy1.m3u8');
+                    hls.loadSource('{{$video->hls_source}}');
                     hls.attachMedia(video);
                     hls.on(Hls.Events.MANIFEST_PARSED, function () {
                         video.play();
