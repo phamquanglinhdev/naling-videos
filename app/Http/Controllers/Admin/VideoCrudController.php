@@ -73,6 +73,8 @@ class VideoCrudController extends CrudController
 //        CRUD::addField(['name' => 'thumbnail', 'type' => 'image','crop'=>'true','aspect_ratio'=>16/9]);
         CRUD::addField(['name' => 'thumbnail', 'type' => 'browse']);
         CRUD::addField(['name' => 'source', 'type' => 'text']);
+        CRUD::addField(['name' => 'hls_source', 'type' => 'text']);
+        CRUD::addField(['name' => 'use_hls','label'=>'Tùy chọn', 'type' => 'radio','options'=>[1=>"Thay thế bằng HLS",0=>"Dùng mp4 nguyên bản"]]);
         CRUD::addField([
             'name' => 'category_id',
             'label'=> 'Danh mục',
