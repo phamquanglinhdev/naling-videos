@@ -1,37 +1,33 @@
 @extends("layouts.client")
 @section("content")
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <!-- Start Video Player -->
     <div class="video-container">
-        <!-- Start Video Player -->
-        @if($video->use_hls == false)
-            <video id="player" class="video d-block" controls="" loop="">
-                <source src="{{$video->source}}" type="video/mp4">
-            </video>
-        @else
-            <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-            <video id="video" class="video d-block" controls="" loop="">
-                <source type="video/mp4">
-            </video>
-            <script>
-                var video = document.getElementById('video');
-                if (Hls.isSupported()) {
-                    var hls = new Hls();
-                    hls.loadSource('https://cdn.jwplayer.com/manifests/juN85hy1.m3u8');
-                    hls.attachMedia(video);
-                    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                        video.play();
-                    });
-                }
-                    // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
-                    // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
-                // This is using the built-in support of the plain video element, without using hls.js.
-                else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
-                    video.addEventListener('canplay', function () {
-                        video.play();
-                    });
-                }
-            </script>
-        @endif
+        <video id="video" class="video d-block" controls="" loop="">
+            <source type="video/mp4">
+        </video>
+        <script>
+            var video = document.getElementById('video');
+            if(Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource('https://cdn.jwplayer.com/manifests/juN85hy1.m3u8');
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                    video.play();
+                });
+            }
+                // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+                // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+            // This is using the built-in support of the plain video element, without using hls.js.
+            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+                video.addEventListener('canplay',function() {
+                    video.play();
+                });
+            }
+        </script>
     </div>
     <!-- Video Player End -->
     <!-- Start Main Content -->
@@ -44,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="play-thumb mb-4">
-                                    <img class="img-fluid" src="{{$video->Category()->first()->thumbnail}}" alt="">
+                                    <img class="img-fluid" src="" alt="">
                                     <div class="top-badge">
                                         <div class="video-badge">
                                             <img class="img-fluid" src="{{asset('images/top-series.png')}}" alt="">
@@ -52,13 +48,13 @@
                                     </div>
                                 </div>
                                 <!-- Play Thumb End -->
-                            {{--                                <div class="thumb-details text-center">--}}
-                            {{--                                    <span> 1080p</span>--}}
-                            {{--                                    <span>24p</span>--}}
-                            {{--                                    <span><img class="img-fluid" src="{{asset("images/dts-logo.png")}}" alt=""></span>--}}
-                            {{--                                    <span>7.1</span>--}}
-                            {{--                                </div>--}}
-                            <!-- Thumb Details End -->
+{{--                                <div class="thumb-details text-center">--}}
+{{--                                    <span> 1080p</span>--}}
+{{--                                    <span>24p</span>--}}
+{{--                                    <span><img class="img-fluid" src="{{asset("images/dts-logo.png")}}" alt=""></span>--}}
+{{--                                    <span>7.1</span>--}}
+{{--                                </div>--}}
+                                <!-- Thumb Details End -->
                             </div>
                             <!-- Col End -->
                         </div>
@@ -68,31 +64,31 @@
                     <div class="col-md-9">
                         <div class="play-details-content">
                             <div class="title-block d-flex align-items-center justify-content-between">
-                                <h2 class="play-title">{{$video->name}}</h2>
+{{--                                <h2 class="play-title">{{$video->name}}</h2>--}}
                             </div>
                             <!-- Title Block -->
-                            <div class="details-info mb-4">
-                                {{--                                <span><i class="icofont-user mr-2" aria-hidden="true"></i> 18+</span>--}}
-                                <span><i class="icofont-terminal mr-2" aria-hidden="true"></i>Buổi số : {{$video->episode}}</span>
-                                <span><i class="icofont-clock-time mr-2"
-                                         aria-hidden="true"></i>{{$video->updated_at}}</span>
-                                <span><i class="icofont-movie mr-2" aria-hidden="true"></i> {{$video->Category()->first()->name}}</span>
-                                {{--                                <span><i class="icofont-world mr-2" aria-hidden="true"></i> United States</span>--}}
-                            </div>
+{{--                            <div class="details-info mb-4">--}}
+{{--                                --}}{{--                                <span><i class="icofont-user mr-2" aria-hidden="true"></i> 18+</span>--}}
+{{--                                <span><i class="icofont-terminal mr-2" aria-hidden="true"></i>Buổi số :</span>--}}
+{{--                                <span><i class="icofont-clock-time mr-2"--}}
+{{--                                         aria-hidden="true"></i>{{$video->updated_at}}</span>--}}
+{{--                                                                <span><i class="icofont-movie mr-2" aria-hidden="true"></i></span>--}}
+{{--                                --}}{{--                                <span><i class="icofont-world mr-2" aria-hidden="true"></i> United States</span>--}}
+{{--                            </div>--}}
                             <!-- Details Info -->
                             <div class="details-desc">
-                                <p>{{$video->Category()->first()->description}}</p>
+                                <p></p>
                             </div>
                             <!-- Details Desc -->
                             <div class="movie-persons mb-4">
                                 <div class="person-block">
                                     <h5 class="title">Giảng viên</h5>
-                                    <p class="name">{{$video->Category()->first()->coach}}</p>
+{{--                                    <p class="name">{{$video->Category()->first()->coach}}</p>--}}
                                 </div>
                                 <!-- Person Block -->
                                 <div class="person-block">
                                     <h5 class="title">Danh mục</h5>
-                                    <a href="{{route('movie',$video->Category()->first()->slug)}}">{{$video->Category()->first()->name}}</a>
+{{--                                    <a href="{{route('movie',$video->Category()->first()->slug)}}">{{$video->Category()->first()->name}}</a>--}}
                                 </div>
                                 <!-- Person Block -->
                             </div>
@@ -213,36 +209,36 @@
                 </div>
                 <!-- Row End -->
                 <div class="row">
-                    @foreach($list as $single)
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-                            <div class="episode-block">
-                                <div class="episode-img position-relative">
-                                    <img src="{{asset($single->thumbnail)}}" class="img-fluid img-zoom" alt="">
-                                    <div class="episode-number">{{$single->episode}}</div>
-                                    <div class="episode-play-info">
-                                        <div class="episode-play">
-                                            <a href="{{route("play",['slug'=>$single->Category()->first()->slug,'episode'=>$single->episode])}}">
-                                                <i class="far fa-play-circle"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Episode Img End -->
-                                <div class="episode-desc p-3">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <span class="text-white">{{$single->updated_at}}</span>
-                                        <span class="text-primary">2h00m</span>
-                                    </div>
-                                    <a href="{{route("play",['slug'=>$single->slug,'episode'=>$single->episode])}}">
-                                        <h6 class="episode-name text-white mb-0">{{$single->name}}
-                                        </h6>
-                                    </a>
-                                </div>
-                                <!-- Episode Description End -->
-                            </div>
-                            <!-- Episode Block End -->
-                        </div>
-                @endforeach
+{{--                @foreach($list as $single)--}}
+{{--                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2">--}}
+{{--                            <div class="episode-block">--}}
+{{--                                <div class="episode-img position-relative">--}}
+{{--                                    <img src="{{asset($single->thumbnail)}}" class="img-fluid img-zoom" alt="">--}}
+{{--                                    <div class="episode-number">{{$single->episode}}</div>--}}
+{{--                                    <div class="episode-play-info">--}}
+{{--                                        <div class="episode-play">--}}
+{{--                                            <a href="{{route("play",['slug'=>$single->Category()->first()->slug,'episode'=>$single->episode])}}">--}}
+{{--                                                <i class="far fa-play-circle"></i>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <!-- Episode Img End -->--}}
+{{--                                <div class="episode-desc p-3">--}}
+{{--                                    <div class="d-flex align-items-center justify-content-between">--}}
+{{--                                        <span class="text-white">{{$single->updated_at}}</span>--}}
+{{--                                        <span class="text-primary">2h00m</span>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="{{route("play",['slug'=>$single->slug,'episode'=>$single->episode])}}">--}}
+{{--                                        <h6 class="episode-name text-white mb-0">{{$single->name}}--}}
+{{--                                        </h6>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <!-- Episode Description End -->--}}
+{{--                            </div>--}}
+{{--                            <!-- Episode Block End -->--}}
+{{--                        </div>--}}
+{{--                @endforeach--}}
 
                 <!-- Col End -->
                 </div>
